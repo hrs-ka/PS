@@ -1,5 +1,5 @@
 # Sports Day Website
-
+Website for school sports day, the gallery pages have been omitted as I was not involved in their coding.
 ![Homepage](https://github.com/hrs-ka/PS/blob/main/SportsDay/Pics/Home.png?raw=True)
 
 ![Scores1](https://github.com/hrs-ka/PS/blob/main/SportsDay/Pics/Scores1.png?raw=True)
