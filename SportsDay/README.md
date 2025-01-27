@@ -27,7 +27,7 @@ Website for school sports day. *(gallery pages have been omitted as I was not in
 #### Units adapt and are handled based on event type.
 ![ScoreTrack](https://github.com/hrs-ka/PS/blob/main/SportsDay/Pics/ScoreEntry4Track.png?raw=True)
 
-#### Manual points editing page.
+#### Manual point editing also available.
 ![Points](https://github.com/hrs-ka/PS/blob/main/SportsDay/Pics/Points.png?raw=true)
 
 
