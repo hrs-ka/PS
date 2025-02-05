@@ -371,7 +371,7 @@ elif game == 2:
                     # change loop condition
 
                 except:
-                    print("That's not a legal move human scum")
+                    print("Illegal move")
         print()
         turn += 1
 
