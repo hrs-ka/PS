@@ -1,0 +1,47 @@
+CREATE TABLE `results` (
+ `K` int(11) NOT NULL AUTO_INCREMENT,
+ `Eventname` varchar(32) DEFAULT NULL,
+ `EventType` varchar(32) DEFAULT NULL,
+ `GPoints` double DEFAULT NULL,
+ `TPoints` double DEFAULT NULL,
+ `MPoints` double DEFAULT NULL,
+ `LPoints` double DEFAULT NULL,
+ `Winner` varchar(64) DEFAULT NULL,
+ `T` timestamp NOT NULL DEFAULT current_timestamp(),
+ PRIMARY KEY (`K`)
+) ENGINE=InnoDB AUTO_INCREMENT=68 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci
+
+
+
+CREATE TABLE `sportsday`.`events` (
+`EventID` INT NOT NULL AUTO_INCREMENT,
+`EventName` varchar(32) DEFAULT NULL ,
+`EventType` varchar(64) DEFAULT NULL ,
+`PrevRecord` varchar(32) DEFAULT NULL ,
+`AgeCategory` varchar(64) DEFAULT NULL ,
+PRIMARY KEY (`EventID`)
+) ENGINE = InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE `sportsday`.`eventresults` (
+`ResultID` INT NOT NULL AUTO_INCREMENT,
+`EventID` INT DEFAULT NULL ,
+`CompetitorName` varchar(32) DEFAULT NULL ,
+`CompetitorNumber` INT DEFAULT NULL ,
+`House` varchar(32) DEFAULT NULL ,
+`Points` double DEFAULT NULL ,
+`Place` INT DEFAULT NULL ,
+`IsRecord` boolean DEFAULT NULL ,
+PRIMARY KEY (`ResultID`),
+FOREIGN KEY (`EventID`) REFERENCES events(EventID)
+) ENGINE = InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE `sportsday`.`performances` (
+`PerformanceID` INT NOT NULL AUTO_INCREMENT,
+`ResultID` INT DEFAULT NULL ,
+`Performance` varchar(32) DEFAULT NULL ,
+`Timestamp` timestamp NOT NULL DEFAULT current_timestamp() ,
+`AttemptNumber` INT DEFAULT NULL ,
+`IsFail` varchar(32) DEFAULT False ,
+PRIMARY KEY (`PerformanceID`),
+FOREIGN KEY (`ResultID`) REFERENCES eventresults(ResultID)
+) ENGINE = InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
